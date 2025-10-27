@@ -1,19 +1,25 @@
 # Linux-project-demonstrating-NFS-based-shared-storage-between-master-and-client-servers.
 # NFS-Based Shared Storage Architecture
+
 ## Project Overview
 I configured a master-client setup using Network File System (NFS) to share data across systems without relying on local storage. This project simulates a real-world scenario where multiple clients access a centralized partition hosted on a master server.
 
 ## Architecture
-Master Server: 192.168.80.131 └── Shared /var/oct4_normal via NFS └── Accessible by all clients
-Client Server: 192.168.80.129 └── Mounted shared partition to /var/nfs_oct3 └── Accessed files without consuming local dis
 
+**Master Server: 192.168.80.131**
+- Shared `/var/oct4_normal` via NFS
+- Accessible by all clients
+
+**Client Server: 192.168.80.129**
+- Mounted shared partition to `/var/nfs_oct3`
+- Accessed files without consuming local disk
 
 ## Technologies Used
 - OS: RHEL/CentOS
-- Services: nfs, rpcbind
-- Configuration: /etc/exports
-- Port: 2049
-- Package: nfs-utils
+- Services: `nfs`, `rpcbind`
+- Configuration: `/etc/exports`
+- Port: `2049`
+- Package: `nfs-utils`
 
 ## What I Did
 
@@ -41,8 +47,6 @@ Client Server: 192.168.80.129 └── Mounted shared partition to /var/nfs_oct
 - Proper configuration of exports and permissions is essential for multi-client access.
 
 ## Folder Structure
-
-
 nfs-shared-storage-linux/ ├── README.md ├── configs/ │   └── exports.txt ├── logs/ │   └── client_mount.log ├── screenshots/ │   └── master_ls_output.png │   └── client_ls_output.png
 
 
